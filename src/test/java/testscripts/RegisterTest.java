@@ -20,7 +20,7 @@ public class RegisterTest extends Testbase {
 		registerObj=new RegisterPage(driver);
 
 		homeobject.openRegistrationPage();
-		registerObj.register("Huda", "Hamza", "hoda.hamza6@gmail.com", "12345678");
+		registerObj.register("Huda", "Hamza", "hoda.hamza3@gmail.com", "12345678");
 		Assert.assertEquals("CONTINUE", registerObj.Continuebtn.getText());
 	}
 
@@ -37,7 +37,7 @@ public class RegisterTest extends Testbase {
 	{
 		loginobj = new loginPage(driver);
 		homeobject.OpenLoginPage();
-		loginobj.logintask("hoda.hamza6@gmail.com", "12345678");
+		loginobj.logintask("hoda.hamza3@gmail.com", "12345678");
 
 	}
 
