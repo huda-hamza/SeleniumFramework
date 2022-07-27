@@ -1,0 +1,17 @@
+[
+{
+
+"firstname" :"huda",
+"Secondname" :"Mohamed",
+"email"      :"hoda2@test.com",
+"password"   :"1234567"
+
+},
+{
+"firstname"  :"moataz",
+"Secondname" :"nabil",
+"email"      :"moataza3@test.com",
+"password"   :"1234567"
+
+}
+]
