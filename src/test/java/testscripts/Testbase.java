@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
@@ -40,9 +41,20 @@ public class Testbase {
 			DesiredCapabilities caps = new DesiredCapabilities();
 			caps.setJavascriptEnabled(true);
 			caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, System.getProperty("user.dir")+"\\drivers\\phantomjs.exe");
-			String[] phantomjsArg = {"--web-security=no","--ignore-ssl-errors=yes"};
-			caps.setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, phantomjsArg);
+			//String[] phantomjsArg = {"--web-security=no","--ignore-ssl-errors=yes"};
+			//caps.setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, phantomjsArg);
 			driver = new PhantomJSDriver(caps);
+		}
+
+		else if (browsertype.equalsIgnoreCase("chrome-headless"))
+		{
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir")+"\\drivers\\chromedriver.exe");
+			ChromeOptions option = new ChromeOptions();
+
+			option.addArguments("--headless", "--window-size=1920,1200");
+
+			 driver = new ChromeDriver(option);
 		}
 
 		else if (browsertype.equalsIgnoreCase("Edge"))
